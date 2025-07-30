@@ -260,3 +260,21 @@ Start importing Assets/Prefabs using Guid(7d37a09093e994e6a8f145a813f25a6d) Impo
  -> (artifact id: '0631a9c9db8d7f9eb8be3f7229d8393e') in 0.000489 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 149.677936 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(043c57726e12f4ff1937f8a0e267ea83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(043c57726e12f4ff1937f8a0e267ea83) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c7debcbd3fb44a493eed59189a324d73') in 0.000676 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 13.355776 seconds.
+  path: Assets/Scenes/Game.unity
+  artifactKey: Guid(e5c84ca3f92314dc991112f8bf044bb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game.unity using Guid(e5c84ca3f92314dc991112f8bf044bb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '89fdde223db34677a4fb1acf12b6ae81') in 0.001051 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
