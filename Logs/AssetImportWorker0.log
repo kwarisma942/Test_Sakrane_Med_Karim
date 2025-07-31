@@ -9038,3 +9038,21 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:scripting/precompiled-assembly-types:Assembly-CSharp: 77a01c5bf089222d2b0ec2698b5d3723 -> c3da7d301bac95ffca1600a14d290951
+========================================================================
+Received Import Request.
+  Time since last request: 1822.578016 seconds.
+  path: Assets/Animations
+  artifactKey: Guid(927071b3832474752a32362d72261ade) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations using Guid(927071b3832474752a32362d72261ade) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '766f96d12b0e7416148540667bfc8365') in 0.012352 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 10.702911 seconds.
+  path: Assets/Sounds
+  artifactKey: Guid(602c86b58cf31440d88555fdcf020f4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds using Guid(602c86b58cf31440d88555fdcf020f4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'da1ace54acbe7469a6eaac23c51eb190') in 0.000783 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
