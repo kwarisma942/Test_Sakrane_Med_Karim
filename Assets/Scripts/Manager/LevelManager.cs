@@ -16,6 +16,8 @@ public class LevelManager : MonoBehaviour
 
     #region Private Variable
 
+    public GameObject ContinueBtn;
+
     [SerializeField]
     private Slider WitdhSlider;
     [SerializeField]
@@ -49,10 +51,21 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("Stage_" + LevelStatus.Index))
+        {
+            ContinueBtn.SetActive(true);
+        }
+        else
+        {
+            ContinueBtn.SetActive(false);
+        }
+    }
     #endregion
 
     #region Public Methode
-   
+
     public void ContinueLevel()
     {
         if (PlayerPrefs.HasKey("Stage_" + LevelStatus.Index))
@@ -73,11 +86,12 @@ public class LevelManager : MonoBehaviour
     public void ResetStage()
     {
         PlayerPrefs.DeleteKey("Stage_" + LevelStatus.Index);
+        ContinueBtn.SetActive(false);
     }
 
-    public bool IsVide(int cardCount)
+    public bool IsVide()
     {
-        return cardCount >= (LevelStatus.Width * LevelStatus.Length);
+        return cardParent.childCount == 0;
     }
 
     public void RemoveCard(string cardName)
@@ -90,7 +104,6 @@ public class LevelManager : MonoBehaviour
             loadCardString = loadCardString.Insert(index, "null");
             PlayerPrefs.SetString("Stage_" + LevelStatus.Index, loadCardString);
         }
-        GameManager.Instance.CheckLevel();
     }
 
     public void ChangeWitdh()
@@ -120,7 +133,6 @@ public class LevelManager : MonoBehaviour
             x = LevelStatus.Pivot.position.x;
             for (int j = 0; j < LevelStatus.Length; j++)
             {
-                Debug.LogError(index);
                 if (currentProfiles[index] != null)
                 {
                     CreateCard(new Vector3(x, y, 1), currentProfiles[index]);

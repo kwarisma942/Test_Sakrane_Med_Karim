@@ -70,7 +70,7 @@ public class Card : MonoBehaviour
     {
         if (!canClick)
             return;
-
+        SoundManager.Instance.PlaySoundFX(0);
         canClick = false; // Disable clicking while flipping
         FrontSprite.sprite = Profile.Sprite;
         Color color = FrontSprite.color;
@@ -176,7 +176,6 @@ public class Card : MonoBehaviour
         target.position = destination;
 
         Destroy(this.gameObject);
-        GameManager.Instance.CheckLevel();
     }
     #endregion
 

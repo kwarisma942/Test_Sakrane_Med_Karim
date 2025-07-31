@@ -381,6 +381,7 @@
 "Assets/Scripts/Card/Card.cs"
 "Assets/Scripts/Manager/GameManager.cs"
 "Assets/Scripts/Manager/LevelManager.cs"
+"Assets/Scripts/Manager/SoundManager.cs"
 -langversion:9.0
 /deterministic
 /optimize+

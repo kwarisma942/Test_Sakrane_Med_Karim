@@ -110,9 +110,10 @@ public class GameManager : MonoBehaviour
         GameplayScreen.SetActive(true);
     }
 
-    public void CheckLevel()
+    public IEnumerator CheckLevel()
     {
-        if (LevelManager.Instance.IsVide(valideCardCount))
+        yield return new WaitForSeconds(1);
+        if (LevelManager.Instance.IsVide())
             Win();
     }
 
@@ -128,13 +129,16 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt("valideCardCount_" + Level, valideCardCount);
                 AddScore();
                 SelectCard = null;
+                SoundManager.Instance.PlaySoundFX(1);
             }
             else
             {
                 SelectCard.ResetCard();
                 card.ResetCard();
                 SelectCard = null;
+                SoundManager.Instance.PlaySoundFX(2);
             }
+            StartCoroutine(CheckLevel());
         }
         else
         {
@@ -148,7 +152,6 @@ public class GameManager : MonoBehaviour
 
     private void Lose()
     {
-        LevelManager.Instance.ResetStage();
         GameplayScreen.SetActive(false);
         WinScoreTxt.text = Score.ToString();
         MaxComboTxt.text = "X " + MaxCombo.ToString();
@@ -159,7 +162,6 @@ public class GameManager : MonoBehaviour
 
     private void Win()
     {
-        LevelManager.Instance.ResetStage();
         GameplayScreen.SetActive(false);
         WinScoreTxt.text = Score.ToString();
         MaxComboTxt.text = "X " + MaxCombo.ToString();
@@ -241,12 +243,15 @@ public class GameManager : MonoBehaviour
 
     private void ResetValue()
     {
+        PlayerPrefs.DeleteKey("TotalRestCard" + Level);
         PlayerPrefs.DeleteKey("valideCardCount_" + Level);
         PlayerPrefs.DeleteKey("Combo_" + Level);
         PlayerPrefs.DeleteKey("MaxCombo_" + Level);
         PlayerPrefs.DeleteKey("Score_" + Level);
         PlayerPrefs.DeleteKey("ComboValue_" + Level);
         PlayerPrefs.DeleteKey("TimerValue_" + Level);
+        LevelManager.Instance.ResetStage();
+
     }
 
     private IEnumerator PunchScale(Transform target, Vector3 originalScale)
@@ -275,6 +280,7 @@ public class LevelStatus
     public int Index;
     public Transform Pivot;
     public int Width, Length;
+    public int TotalRestCard;
     public float PaddingVertical, PaddingHorizontal;
     public Card CardPrefab;
 }
